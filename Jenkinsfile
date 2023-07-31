@@ -5,7 +5,7 @@ pipeline {
         stage('Configure Docker Image Properties') {
             steps {
                 // Set the Docker image retention properties using curl command
-                sh 'curl -u admin:M1234567m -X PUT "http://localhost:8082/artifactory/api/storage/image1/myimage?properties=docker.retention.maxDays=1;docker.retention.maxCount=1"'
+                sh 'curl -u admin:M1234567m -X PUT "http://127.0.0.1:8082/artifactory/api/storage/image1/myimage?properties=docker.retention.maxDays=1;docker.retention.maxCount=1"'
             }
         }
         stage('Cleanup Docker Images') {
