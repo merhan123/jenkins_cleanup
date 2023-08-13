@@ -3,8 +3,8 @@ pipeline {
     
     environment {
         REPO_NAME = "test-cleanup-docker"
-        USERNAME = "jenkins-svc"
-        PASSWORD = "EzX6kZA2FOSyNTZjK9gS"
+        USERNAME = #
+        PASSWORD = #
     }
     
     stages {
