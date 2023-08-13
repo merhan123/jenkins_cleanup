@@ -14,8 +14,8 @@ pipeline {
                     // Step 1: Get the list of image names
                     def response = sh(script: """\
                         curl -u ${env.USERNAME}:${env.PASSWORD} -X POST "https://jfrog.onebank.local/artifactory/api/search/aql" -H "Content-Type: text/plain" -d 'items.find({
-                            "repo":{"$eq":"${env.REPO_NAME}"},
-                            "@docker.repoName" : { "$eq" : "*" }
+                            "repo": "${env.REPO_NAME}",
+                            "@docker.repoName": "*"
                         }).include("name", "@docker.repoName", "@docker.manifest", "stat.downloads")'
                     """, returnStdout: true).trim()
                     
